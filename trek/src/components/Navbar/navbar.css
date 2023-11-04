@@ -1,0 +1,49 @@
+* {
+    --margin-scale: 50px;
+    --primary: #cdb3b3;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+h3 {
+    font-weight: 300;
+}
+
+.Navbar {
+    height: 137px;
+    background: #D9D9D9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    padding-left: 30px;
+    height: 50px;
+}
+
+.navbarcenter {
+    align-self: end;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.navbarcenter button {
+    background: #D9D9D9;
+    border-radius: 30px;
+    border: solid black 0px;
+    font-family: 'Inter', sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.navbarcenter button:hover {
+    background-color: #ffffff;
+}
+
+.navbarend {
+    margin: var(--margin-scale);
+
+    font-family: 'Inter', sans-serif;
+}
