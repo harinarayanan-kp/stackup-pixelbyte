@@ -1,11 +1,15 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
+import HomeScreen from './components/HomeScreen/HomeScreen';
+import LoginPage from './components/Login/LoginPage';
+
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-    </div>
+    <Routes>
+      <Route path='/' element={<HomeScreen />} />
+      <Route path='login' element={<LoginPage />} />
+    </Routes>
   );
 }
 

@@ -2,6 +2,9 @@ import React from 'react';
 import logo from '../../images/Exclude.png';
 import './navbar.css';
 
+
+import LoginButton from './LoginButton';
+
 const Navbar = () => {
   return (
     <div className='Navbar'>
@@ -14,7 +17,7 @@ const Navbar = () => {
         <button><h3>KIDS</h3></button>
         <button><h3>SPORTS</h3></button>
       </div>
-      <div className='navbarend' onClick={() => { console.log("clicked login")}}>LOGIN</div>
+      <LoginButton/>
     </div>
   );
 };
