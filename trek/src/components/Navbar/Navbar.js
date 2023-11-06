@@ -17,7 +17,7 @@ const Navbar = () => {
         <button><h3>KIDS</h3></button>
         <button><h3>SPORTS</h3></button>
       </div>
-      <LoginButton/>
+      <LoginButton />
     </div>
   );
 };

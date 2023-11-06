@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { auth, googleProvider } from '../../config/firebase'
-import { createUserWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { useNavigate  } from 'react-router-dom';
+import './login.css'
 
 export let isSignedin = false;
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
+  
+
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -24,6 +30,7 @@ const LoginPage = () => {
   const SignUp = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      navigate('/');     
     } catch (error) {
       console.log(error);
     }
@@ -32,43 +39,32 @@ const LoginPage = () => {
   const SignInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
+      navigate('/'); 
     } catch (err) {
       console.error(err);
     }
   };
 
-  const logout = async () => {
-    try {
-      await signOut(auth);
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
   return (
-    <div className="login-container">
-      <h1>Login</h1>
-      <form>
-        <label>Email:
-          <input
+    <section className="signup-container">
+      <h1>Sign UP</h1>
+          <input className='inputfield'
+            placeholder='Email'
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </label>
-        <label>Password:
-          <input
+          <input className='inputfield'
+          placeholder='Password'
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </label>
-        <button type="button" onClick={SignUp}>Login</button>
-        <button type="button" onClick={SignInWithGoogle}>Sign in with Google</button>
-        <button onClick={logout}>Logout</button>
-      </form>
-      {isSignedin && <p>You are signed in.</p>}
-    </div>
+        <button className='button pointer' type="button" onClick={SignUp}>Login</button>
+        <>or</>
+        <button className=' button pointer' type="button" onClick={SignInWithGoogle}>Sign in with Google</button>
+    </section>
   );
 };
 
