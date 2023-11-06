@@ -1,11 +1,14 @@
 ![StackUp Banner]([https://tinkerhub.frappe.cloud/files/stackup%20banner.jpeg])
-# Project Name
+# Trek-Step Into Style
 Long Description about project. This project do that. This project is awesome...
 ## Team members
-1. Name [Embed personal github URL]
-2. Name [Embed perosnal github URL]
+1. Harinarayanan K P [https://github.com/harinarayanan-kp]
+2. Felix Geemon [https://github.com/geemonfelix]
+3. Pranav K Nair []
+4. Syamkrishna K V []
+
 ## Team Id
-Team id here
+pixelbyte
 ## Link to product walkthrough
 [link to video]
 ## How it Works ?
