@@ -33,6 +33,7 @@ const LoginPage = () => {
       navigate('/');     
     } catch (error) {
       console.log(error);
+      window.alert("INVALID E-MAIL");
     }
   };
 
