@@ -1,16 +1,20 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
-import List from '../listwindow/list'
+// import List from '../listwindow/list'
 import HomeSlide from './slide/HomeSlide'
 
 import './home.css'
+import CartButton from './CartButton/CartButton'
+import ProductDetails from '../ProductDetails/ProductDetails'
 
 const HomeScreen = () => {
     return (
         <>
             <Navbar />
             <HomeMain />
-            <List />
+            {/* <List /> */}
+            <CartButton/>
+            <ProductDetails/>
         </>
     )
 }

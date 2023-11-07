@@ -1,0 +1,27 @@
+.mainnavbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: rgb(55, 55, 55);
+    box-shadow: 5px 5px 10px #888888;
+    transition: 0.2s;
+}
+
+.mainnavbutton:hover {
+    background-color: #1b1b1b;
+}
+
+.cartimage {
+    height: 50px;
+    width: 50px;
+}
+.mainnavbutton:hover{
+    cursor: pointer;
+    box-shadow: 0 0 20px #454545;
+}

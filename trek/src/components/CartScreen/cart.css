@@ -1,0 +1,49 @@
+.ListContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.ListTile{
+    margin: 10px;
+    border-radius: 15px;
+    height: 200px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ListImage{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: red;
+    border-radius: 15px;
+    height: 180px;
+    width: 180px;
+}
+
+.ListTitle{
+    display: flex;
+    font-size: 40px;
+}
+
+.details{
+    background-color: antiquewhite;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.ListPrice{
+    font-size: 30px;
+}
+
+.deletebutton{
+    margin: 10px;
+    background-color: rgb(236, 10, 10);
+    height: 30px;
+    width: 30px;
+}

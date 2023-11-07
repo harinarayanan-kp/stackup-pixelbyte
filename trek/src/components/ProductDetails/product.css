@@ -1,0 +1,10 @@
+.listcard{
+    background-color: aquamarine;
+    border-radius: 30px;
+}
+
+.imgwrap{
+    border-radius: 15px;
+    height: 300px;
+    width: 300px;
+}
