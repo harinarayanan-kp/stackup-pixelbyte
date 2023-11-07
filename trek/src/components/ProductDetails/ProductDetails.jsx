@@ -1,44 +1,37 @@
-import React, { useEffect, useState } from 'react'
-import './product.css'
-import { db } from '../../config/firebase'
-import { getDocs, collection } from 'firebase/firestore'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { db } from '../../config/firebase';
 
-const ProductDetails = () => {
-    const [productList, setProductList] = useState([]);
+const ProductDetail = () => {
+  const { productId } = useParams();
+  const [product, setProduct] = useState(null);
 
-    const productCollectionRef = collection(db, 'products');
+  useEffect(() => {
+    // Fetch the specific product from Firebase based on the productId.
+    const productRef = db.collection(`products/${productId}`);
+    productRef.on('value', (snapshot) => {
+      const data = snapshot.val();
+      setProduct(data);
+    });
 
-    useEffect(() => {
-        const getProductList = async () => {
-            try {
-                const data = await getDocs(productCollectionRef);
-                const filteredData = data.docs.map((doc) => ({
-                    ...doc.data(),
-                    id: doc.id,
-                }));
-                setProductList(filteredData);
-            } catch (err) {
-                console.error(err);
-            }
-        };
-        getProductList();
-    }, [productCollectionRef]);
+    // Unsubscribe from the Firebase database when the component unmounts.
+    return () => {
+      productRef.off();
+    };
+  }, [productId]);
 
-    return (
-        <div>
-            {productList.map((product) => (
-                <div className='listcard'>
-                        <img className='imgwrap' src={product.Image}></img>
-                    <h1>
-                        {product.Title}
-                    </h1>
-                    <h1>
-                        {product.Price}
-                    </h1>
-                </div>
-            ))}
-        </div>
-    )
-}
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
-export default ProductDetails
+  return (
+    <div>
+      <h1>Product Details</h1>
+      <h2>{product.name}</h2>
+      <p>{product.description}</p>
+      <p>Price: ${product.price}</p>
+    </div>
+  );
+};
+
+export default ProductDetail;

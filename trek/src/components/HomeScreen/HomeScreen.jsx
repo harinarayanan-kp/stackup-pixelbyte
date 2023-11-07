@@ -5,7 +5,7 @@ import HomeSlide from './slide/HomeSlide'
 
 import './home.css'
 import CartButton from './CartButton/CartButton'
-import ProductDetails from '../ProductDetails/ProductDetails'
+// import ProductDetails from '../ProductDetails/ProductDetails'
 
 const HomeScreen = () => {
     return (
@@ -14,7 +14,7 @@ const HomeScreen = () => {
             <HomeMain />
             {/* <List /> */}
             <CartButton/>
-            <ProductDetails/>
+            {/* <ProductDetails/> */}
         </>
     )
 }
