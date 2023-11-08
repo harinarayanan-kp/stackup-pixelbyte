@@ -1,10 +1,10 @@
 import './App.css';
 import HomeScreen from './components/HomeScreen/HomeScreen';
+import { Route, Routes } from 'react-router-dom';
+
 
 import SignupPage from './components/Login/SignUp/LoginPage';
 import LoginPage from './components/Login/Login/LoginPage';
-
-import { Route, Routes } from 'react-router-dom';
 import MyAccount from './components/settings/MyAccount';
 import Cart from './components/CartScreen/Cart';
 import ProductDetails from './components/ProductDetails/ProductDetails';

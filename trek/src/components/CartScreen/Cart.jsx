@@ -56,7 +56,7 @@ const Cart = () => {
           const productSnapshot = await getDoc(productDocRef);
           if (productSnapshot.exists()) {
             const productData = productSnapshot.data();
-            productDetails.push(productData);
+            productDetails.push({ id: productId, ...productData });
           }
         } catch (error) {
           console.error('Error fetching product:', error);
@@ -68,6 +68,31 @@ const Cart = () => {
 
     fetchProductDetails();
   }, [cartItems]);
+useEffect(()=>{
+  
+}, [cartItems])
+  // Function to remove a product from the cart
+  const removeFromCart = async (productId) => {
+    try {
+      console.log('clicked')
+      const userCartRef = doc(db, 'carts', userId);
+      const productSnapshot = await getDoc(userCartRef);
+      if (productSnapshot.exists()) {
+        const productData = productSnapshot.data();
+        const updatedProducts = productData.products.filter((id) => id !== productId);
+
+        // Update the cart in Firestore with the updated product list
+        await db.collection('carts').doc(userId).update({
+          products: updatedProducts,
+        });
+
+        // Remove the product from the local state
+        setCartItems(updatedProducts);
+      }
+    } catch (error) {
+      console.error('Error removing product from cart:', error);
+    }
+  };
 
   if (!userId) {
     return <div>PLEASE LOGIN TO CONTINUE</div>;
@@ -78,29 +103,33 @@ const Cart = () => {
       <Navbar />
       <div className='ListContainer'>
         {products.map((product, index) => (
-          <ListTile key={index} product={product} />
+          <ListTile
+            key={index}
+            product={product}
+            onRemoveFromCart={() => removeFromCart(product.id)}
+          />
         ))}
       </div>
     </div>
   );
 };
 
-export default Cart;
-
-const ListTile = ({ product }) => {
-  // Assuming `product` contains product details
+const ListTile = ({ product, onRemoveFromCart }) => {
   return (
     <div className='ListTile'>
       <div style={{ flexDirection: "row", display: "flex" }}>
-        <div className='ListImage'></div>
+        <img alt='' src={product.Image} className='ListImage'></img>
         <div className='details'>
           <div className='ListTitle'>{product.Title}</div>
-          <div className='ListDetails'>{product.Image}</div>
           <div className='ListPrice'>{product.Price}</div>
           <QuantityButton />
         </div>
       </div>
-      <div className='deletebutton'></div>
+      <button className='deletebutton' onClick={onRemoveFromCart}>
+        Remove from Cart
+      </button>
     </div>
   );
 };
+
+export default Cart;

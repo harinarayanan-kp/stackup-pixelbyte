@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { db, auth } from '../../config/firebase';
 import { doc, getDoc, updateDoc, arrayUnion, setDoc, collection } from 'firebase/firestore';
 import CartButton from '../HomeScreen/CartButton/CartButton';
+import Navbar from '../Navbar/Navbar';
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -76,9 +77,10 @@ const ProductDetail = () => {
 
   return (
     <div>
+      <Navbar/>
       <h1>Product Details</h1>
       <h2>{product.Title}</h2>
-      <p>{product.Image}</p>
+      <img alt='error loading img' style={{height:"300px"}} src={product.Image}></img>
       <p>Price: ${product.Price}</p>
       <button onClick={handleAddToCart}>Add to Cart</button>
       <CartButton />
