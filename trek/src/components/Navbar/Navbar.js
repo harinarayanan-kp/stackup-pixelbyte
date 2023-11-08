@@ -13,12 +13,29 @@ const Navbar = () => {
       </Link>
       <Outlet />
       <div className='navbarcenter'>
-        <button onClick={() => { console.log('Clicked Menu') }}>
-          <h3>MEN</h3>
-        </button>
-        <button><h3>WOMEN</h3></button>
-        <button><h3>KIDS</h3></button>
-        <button><h3>SPORTS</h3></button>
+
+        <Link to="/list?category=men">
+          <button>
+            <h3>MEN</h3>
+          </button>
+        </Link>
+
+        <Link to="/list?category=women">
+          <button>
+            <h3>WOMEN</h3>
+          </button>
+        </Link>
+
+        <Link to="/list?category=kids">
+          <button>
+            <h3>KIDS</h3>
+          </button>
+        </Link>
+        <Link to="/list?category=sports">
+          <button>
+            <h3>SPORTS</h3>
+          </button>
+        </Link>
       </div>
       <LoginButton />
     </div>

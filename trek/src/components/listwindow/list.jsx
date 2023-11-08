@@ -3,6 +3,7 @@ import './list.css'
 import { db } from '../../config/firebase'
 import { getDocs, collection } from 'firebase/firestore'
 import { Link } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
 
 const List = () => {
     const [productList, setProductList] = useState([]);
@@ -26,9 +27,10 @@ const List = () => {
     }, [productCollectionRef]);
 
     // const generateProductURL = (productId) => `/product/${productId}`;
-    
+
     return (
         <div>
+            <Navbar/>
             {productList.map((product) => (
             <Link to={`/product/${product.id}`} key={product.id} className='listcard'>
                 <img className='imgwrap' alt='img' src={product.Image}></img>

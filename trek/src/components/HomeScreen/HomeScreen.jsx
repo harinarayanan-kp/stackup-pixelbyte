@@ -12,7 +12,6 @@ const HomeScreen = () => {
         <>
             <Navbar />
             <HomeMain />
-            {/* <List /> */}
             <CartButton/>
             {/* <ProductDetails/> */}
         </>
