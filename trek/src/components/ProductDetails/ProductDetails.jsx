@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { db } from '../../config/firebase';
+import { ref, get } from 'firebase/database';
 
 const ProductDetail = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
 
-  useEffect(() => {
-    // Fetch the specific product from Firebase based on the productId.
-    const productRef = db.collection(`products/${productId}`);
-    productRef.on('value', (snapshot) => {
-      const data = snapshot.val();
-      setProduct(data);
-    });
+  // Log the productId to the console
+  console.log('Product ID:', productId);
 
-    // Unsubscribe from the Firebase database when the component unmounts.
-    return () => {
-      productRef.off();
-    };
+  useEffect(() => {
+    const productRef = ref(db, `products/${productId}`);
+
+    get(productRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          setProduct(data);
+        } else {
+          console.log('Product not found.');
+        }
+      })
+      .catch((error) => {
+        console.error('Error getting product:', error);
+      });
   }, [productId]);
 
   if (!product) {

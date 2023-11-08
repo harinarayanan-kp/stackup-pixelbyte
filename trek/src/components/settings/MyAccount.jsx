@@ -2,19 +2,27 @@ import './account.css'
 import React from 'react'
 import { auth } from '../../config/firebase'
 import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
-const logout = async () => {
-    try {
-        await signOut(auth);
-    } catch (err) {
-        console.error(err);
-    }
-};
+
 
 const MyAccount = () => {
+    
+    const navigate = useNavigate();
+
+    const Logout = async () => {
+
+        try {
+            await signOut(auth);
+            navigate('/');
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
     return (
         <div className='myaccount'>
-            <button onClick={logout}>Logout</button>
+            <button onClick={Logout}>Logout</button>
         </div>
     )
 }

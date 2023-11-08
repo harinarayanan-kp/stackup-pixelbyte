@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { auth, googleProvider } from '../../config/firebase'
+import { auth, googleProvider } from '../../../config/firebase'
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { useNavigate  } from 'react-router-dom';
-import './login.css'
+import '../login.css'
 
 export let isSignedin = false;
 
-const LoginPage = () => {
+const SignupPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -34,7 +34,6 @@ const LoginPage = () => {
     } catch (error) {
       console.log(error);
       window.alert("INVALID E-MAIL");
-
     }
   };
 
@@ -63,11 +62,11 @@ const LoginPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        <button className='button pointer' type="button" onClick={SignUp}>Login</button>
+        <button className='button pointer' type="button" onClick={SignUp}>Sign Up</button>
         <>or</>
         <button className=' button pointer' type="button" onClick={SignInWithGoogle}>Sign in with Google</button>
     </section>
   );
 };
 
-export default LoginPage;
+export default SignupPage;
