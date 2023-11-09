@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const MyAccount = () => {
-    
+
     const navigate = useNavigate();
 
     const Logout = async () => {
@@ -22,7 +22,9 @@ const MyAccount = () => {
 
     return (
         <div className='myaccount'>
-            <button onClick={Logout}>Logout</button>
+            <div className="buttonlogout">
+                <button className="buttonlogout" onClick={Logout}>Logout</button>
+            </div>
         </div>
     )
 }

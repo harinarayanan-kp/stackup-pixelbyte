@@ -33,15 +33,17 @@ const List = () => {
     return (
         <div>
             <Navbar />
-            {productList.map((product) => (
-                <Link to={`/product/${product.id}`} key={product.id} className='listcard'>
-                    <img className='imgwrap' alt='img' src={product.Image}></img>
-                    <div style={{ marginLeft: "10px" }}>
-                        <h1>{product.Title}</h1>
-                        <h1>{product.Price}</h1>
-                    </div>
-                </Link>
-            ))}
+            <div className='listtilecontainer'>
+                {productList.map((product) => (
+                    <Link to={`/product/${product.id}`} key={product.id} className='listcard'>
+                        <img className='imgwrap' alt='img' src={product.Image}></img>
+                        <div className="cardbottom">
+                            <div className='productTitle'>{product.Title}</div>
+                            <div className='productPrice'>${product.Price}</div>
+                        </div>
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 };

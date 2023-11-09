@@ -9,6 +9,7 @@ import MyAccount from './components/settings/MyAccount';
 import Cart from './components/CartScreen/Cart';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import List from './components/listwindow/list';
+import AdminScreen from './components/ADMIN/AdminScreen';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path='cart' element={<Cart />} />
       <Route path='list' element={<List />} />
       <Route path="/product/:productId" element={<ProductDetails/>}/>
+      <Route path='/admin' element={<AdminScreen/>}/>
     </Routes>
   );
 }

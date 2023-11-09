@@ -14,8 +14,6 @@ const Navbar = () => {
       <Outlet />
       <div className='navbarcenter'>
 
-        
-
         <Link to="/list?category=men">
           <button>
             <h3>MEN</h3>

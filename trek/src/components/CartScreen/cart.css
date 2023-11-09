@@ -16,12 +16,12 @@
 }
 
 .ListImage{
-    margin-left: 10px;
+
     margin-right: 10px;
     background-color: red;
     border-radius: 15px;
-    height: 180px;
-    width: 180px;
+    height: 200px;
+    width: 200px;
 }
 
 .ListTitle{
@@ -47,3 +47,4 @@
     height: 30px;
     width: 30px;
 }
+

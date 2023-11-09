@@ -78,11 +78,18 @@ const ProductDetail = () => {
   return (
     <div>
       <Navbar/>
-      <h1>Product Details</h1>
-      <h2>{product.Title}</h2>
+
+
+
+      <div>Product Details</div>
+      <div className=''>{product.Title}</div>
       <img alt='error loading img' style={{height:"300px"}} src={product.Image}></img>
-      <p>Price: ${product.Price}</p>
+      <div>Price: ${product.Price}</div>
       <button onClick={handleAddToCart}>Add to Cart</button>
+
+
+
+
       <CartButton />
     </div>
   );
