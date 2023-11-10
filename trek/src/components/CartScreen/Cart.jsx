@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './cart.css';
-import QuantityButton from './QuantityButton'; // Make sure you implement this component
+import QuantityButton from './QuantityButton';
 
 import { db, auth } from '../../config/firebase';
 import { setDoc, doc, getDoc } from 'firebase/firestore';
@@ -40,7 +40,7 @@ const Cart = () => {
             setCartItems(productData.products || []);
           } else {
             console.log('Cart not found for the user');
-            setCartItems([]); // Handle empty cart
+            setCartItems([]);
           }
         }
       } catch (error) {

@@ -1,56 +1,84 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from '../Navbar/Navbar'
-// import List from '../listwindow/list'
-import HomeSlide from './slide/HomeSlide'
+import React, { useEffect, useState } from "react";
+import Navbar from "../Navbar/Navbar";
+import HomeSlide from "./slide/HomeSlide";
 
-import './home.css'
-import CartButton from './CartButton/CartButton'
-import Loader from '../loader/loader'
-import AboutUs from '../AboutUs/AboutUs'
-// import MouseFollower from './MouseFollower/MouseFollower'
+import "./home.css";
+import CartButton from "./CartButton/CartButton";
+import Loader from "../loader/loader";
+import AboutUs from "../AboutUs/AboutUs";
+import { Link } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../config/firebase";
 
 const HomeScreen = () => {
-    const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 2000);
-    }, []);
-    return (
-        <>
-            {isLoading ? (<Loader />) : (
-                <div>
-                    <Navbar />
-                    <HomeMain />
-                    <CartButton />
-                    <AboutUs />
-                </div>)}
-        </>
-    )
-}
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+  return (
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div>
+          <Navbar />
+          <HomeMain />
+          <CartButton />
+          <AboutUs />
+        </div>
+      )}
+    </>
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
 
 const HomeMain = () => {
-    return (
-        <div className='homemain'>
-            <HomeSlide />
-            {newFunction()}
-        </div>
-    ) 
-}
-const newLocal = <div className='sample'>
-    <div className='mainlist scrollable-content'>
-        <div className='listitem'><img style={{ objectFit: "cover", height: "50vh" }} alt='' src='https://images.pexels.com/photos/1031955/pexels-photo-1031955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'></img></div>
-        <div className='listitem'></div>
-        <div className='listitem'></div>
-        <div className='listitem'></div>
-        <div className='listitem'></div>
+  return (
+    <div className="homemain">
+      <HomeSlide />
+      <div className="mainlist scrollable-content">
+        <CardProduct />
+      </div>
     </div>
-</div>
-function newFunction() {
-    return (
-        newLocal
-        )
-}
+  );
+};
+
+const CardProduct = () => {
+  const [productList, setProductList] = useState([]);
+  const productCollectionRef = collection(db, "products");
+
+  useEffect(() => {
+    const getProductList = async () => {
+      try {
+        const q = query(productCollectionRef, where("Category", "==", "sports"));
+        const data = await getDocs(q);
+        const filteredData = data.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setProductList(filteredData);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getProductList();
+  });
+
+  return (
+    <div style={{ display: "flex" }} className="listtilecontainer">
+      {productList.map((product) => (
+        <Link
+          to={`/product/${product.id}`}
+          key={product.id}
+          className="listcard"
+        >
+          <img style={{height: "50vh", objectFit: "cover"}} className="imgwrap" alt="img" src={product.Image}></img>
+        </Link>
+      ))}
+    </div>
+  );
+};
