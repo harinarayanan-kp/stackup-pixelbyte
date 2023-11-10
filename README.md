@@ -51,9 +51,14 @@ Library Name - Version
 
 ## How to configure
 Instructions for setting up project
-> Ensure Node.JS is installed on system
-> cmd line - "cd trek" to get into project folder
-> cmd line - "npm install react" to initialise the project
+
+Ensure Node.JS is installed on system
+
+to get into the project folder, paste this on terminal
+> cd trek
+
+to initialize the project
+> npm install react
 
 ## How to Run
 Instructions for running
