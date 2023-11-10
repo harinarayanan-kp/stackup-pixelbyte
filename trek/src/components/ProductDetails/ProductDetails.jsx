@@ -4,6 +4,7 @@ import { db, auth } from '../../config/firebase';
 import { doc, getDoc, updateDoc, arrayUnion, setDoc, collection } from 'firebase/firestore';
 import CartButton from '../HomeScreen/CartButton/CartButton';
 import Navbar from '../Navbar/Navbar';
+import './product.css'
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -77,18 +78,20 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
+      <div className="detailsmain" style={{
+        display: 'flex',
+      }}>
+        <img alt='error loading img' style={{
+          height: "300px",
+          width: "500px",
+          objectFit: "cover",
+          margin: "20px",
+        }} src={product.Image} />
 
+        {newFunction(product, handleAddToCart)}
 
-
-      <div>Product Details</div>
-      <div className=''>{product.Title}</div>
-      <img alt='error loading img' style={{height:"300px"}} src={product.Image}></img>
-      <div>Price: ${product.Price}</div>
-      <button onClick={handleAddToCart}>Add to Cart</button>
-
-
-
+      </div>
 
       <CartButton />
     </div>
@@ -96,3 +99,31 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
+
+function newFunction(product, handleAddToCart) {
+  return <div className="" style={{
+    display: "flex",
+    flexDirection: "column",
+    fontSize: "30px",
+    fontWeight: "600"
+  }}>
+
+
+    <div className=''>{product.Title}</div>
+
+    <div className='price'>Price: ₹{product.Price}</div>
+
+    <div>Product Details</div>
+
+    <button style={{
+      height: "60px",
+      borderRadius: "50px",
+      backgroundColor: "#616161",
+      color: "white",
+      fontSize: "30px"
+    }} className='addtocart' onClick={handleAddToCart}>Add to Cart</button>
+
+  </div>;
+}
+

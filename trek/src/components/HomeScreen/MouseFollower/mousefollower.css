@@ -1,0 +1,14 @@
+.mousetracker {
+    background-color: aqua;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    z-index: 200;
+    /* display: none; */
+}
+
+.slidecontainer:hover {
+    /* .mousetracker { */
+        display: block;
+    /* } */
+}

@@ -21,7 +21,7 @@
     margin: 10px;
     border-radius: 14px;
     background-color: rgb(172, 172, 172);
-    height: 30vh;
+    height: 60vh;
     width: 50vw;
     align-items: center;
     overflow-x: auto;
@@ -33,8 +33,8 @@
     display: inline-block;
     margin: 15px;
     background-color: rgb(142, 142, 142);
-    height: 150px;
-    width: 150px;
+    height: 50vh;
+    overflow: hidden;
 }
 
 .sample {

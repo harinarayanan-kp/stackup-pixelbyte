@@ -4,6 +4,7 @@ import { db } from '../../config/firebase';
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
+import CartButton from '../HomeScreen/CartButton/CartButton';
 import { useLocation } from 'react-router-dom'; // Import useLocation
 
 const List = () => {
@@ -30,6 +31,11 @@ const List = () => {
         getProductList();
     }, [location.search]);
 
+    if (!productList) {
+        return <div>LOADING</div>
+
+    }
+
     return (
         <div>
             <Navbar />
@@ -39,11 +45,12 @@ const List = () => {
                         <img className='imgwrap' alt='img' src={product.Image}></img>
                         <div className="cardbottom">
                             <div className='productTitle'>{product.Title}</div>
-                            <div className='productPrice'>${product.Price}</div>
+                            <div className='productPrice'>₹{product.Price}</div>
                         </div>
                     </Link>
                 ))}
             </div>
+            <CartButton />
         </div>
     );
 };
