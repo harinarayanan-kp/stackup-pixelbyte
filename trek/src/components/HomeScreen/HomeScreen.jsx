@@ -40,16 +40,17 @@ const HomeMain = () => {
         </div>
     ) 
 }
+const newLocal = <div className='sample'>
+    <div className='mainlist scrollable-content'>
+        <div className='listitem'><img style={{ objectFit: "cover", height: "50vh" }} alt='' src='https://images.pexels.com/photos/1031955/pexels-photo-1031955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'></img></div>
+        <div className='listitem'></div>
+        <div className='listitem'></div>
+        <div className='listitem'></div>
+        <div className='listitem'></div>
+    </div>
+</div>
 function newFunction() {
     return (
-        <div className='sample'>
-            <div className='mainlist scrollable-content'>
-                <div className='listitem'><img style={{ objectFit: "cover", height: "50vh" }} alt='' src='https://images.pexels.com/photos/1031955/pexels-photo-1031955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'></img></div>
-                <div className='listitem'></div>
-                <div className='listitem'></div>
-                <div className='listitem'></div>
-                <div className='listitem'></div>
-            </div>
-        </div>
+        newLocal
         )
 }
