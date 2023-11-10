@@ -38,7 +38,7 @@ const HomeMain = () => {
             <HomeSlide />
             {newFunction()}
         </div>
-    )
+    ) 
 }
 function newFunction() {
     return (
