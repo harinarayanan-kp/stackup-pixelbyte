@@ -55,10 +55,10 @@ Instructions for setting up project
 Ensure Node.JS is installed on system
 
 to get into the project folder, paste this on terminal
-> cd trek
+```cd trek```
 
 to initialize the project
-> npm install react
+``` npm install react ```
 
 ## How to Run
 Instructions for running
