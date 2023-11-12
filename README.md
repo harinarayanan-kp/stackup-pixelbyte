@@ -29,7 +29,7 @@ Responsive Design: "Trek-StepIntoStyle" boasts a responsive design that ensures 
 ## Team Id
 pixelbyte
 ## Link to product walkthrough
-[link to video]
+[https://drive.google.com/drive/folders/17z_oE4R-i1SinPsD4s2xdSFuKEE8OaYd?usp=sharing]
 ## How it Works ?
   Trek-StepIntoStyle, our E-commerce shoe selling website is built using the React Firebase stack. React for the front-end, Firebase Authentication ensures safe and easy user registration and login. Meanwhile, Firebase Firestore stores product data, providing real-time updates and secure data handling. Users can explore our wide range of shoes, add items to their cart, and complete secure payments. With an intuitive user interface, efficient search and filtering options, and robust order management, our website ensures a seamless shopping journey. Security measures and performance optimizations guarantee a safe and responsive platform for all users
   
@@ -38,7 +38,7 @@ pixelbyte
 for demonstration purpose the website is hosted in firebase.
 link to the hosted website:  [https://trek-stepintostyle.web.app/]
   
-3. Embed video of project demo
+(https://drive.google.com/drive/folders/17z_oE4R-i1SinPsD4s2xdSFuKEE8OaYd?usp=sharing)
 ## Libraries used
 Library Name - Version
 
