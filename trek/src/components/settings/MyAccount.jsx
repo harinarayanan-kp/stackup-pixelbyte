@@ -21,7 +21,7 @@ const MyAccount = () => {
     };
 
     return (
-        <div className='myaccount'>
+        <div className='myaccountpage'>
             <div className="buttonlogout">
                 <button className="buttonlogout" onClick={Logout}>Logout</button>
             </div>

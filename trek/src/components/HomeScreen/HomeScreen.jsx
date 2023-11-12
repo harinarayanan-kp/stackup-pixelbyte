@@ -54,7 +54,10 @@ const CardProduct = () => {
   useEffect(() => {
     const getProductList = async () => {
       try {
-        const q = query(productCollectionRef, where("Category", "==", "sports"));
+        const q = query(
+          productCollectionRef,
+          where("Category", "==", "sports")
+        );
         const data = await getDocs(q);
         const filteredData = data.docs.map((doc) => ({
           ...doc.data(),
@@ -66,7 +69,8 @@ const CardProduct = () => {
       }
     };
     getProductList();
-  });
+  }, []);
+  //LOOP Error FIxed
 
   return (
     <div style={{ display: "flex" }} className="listtilecontainer">
@@ -76,7 +80,12 @@ const CardProduct = () => {
           key={product.id}
           className="listcard"
         >
-          <img style={{height: "50vh", objectFit: "cover"}} className="imgwrap" alt="img" src={product.Image}></img>
+          <img
+            style={{ height: "50vh", objectFit: "cover" }}
+            className="imgwrap"
+            alt="img"
+            src={product.Image}
+          ></img>
         </Link>
       ))}
     </div>

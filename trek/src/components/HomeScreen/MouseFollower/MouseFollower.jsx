@@ -12,7 +12,6 @@ const MouseFollower = () => {
     window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      // Clean up the event listener when the component unmounts
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);

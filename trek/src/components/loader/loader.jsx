@@ -4,7 +4,7 @@ import '../commonstyle.css'
 
 const Loader = () => {
   return (
-    <div className='center'>
+    <div style={{height: "100vh"}} className='center'>
       <div className="loader"></div>
     </div>
   )
