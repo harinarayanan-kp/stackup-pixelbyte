@@ -39,8 +39,11 @@ h3 {
   padding-left: 30px;
   padding-right: 30px;
 }
+.navbarcenter button:hover{
+  background-color: #cbcbcb;
+}
 
-.active{
+.active {
   text-decoration: underline;
   text-decoration-thickness: 5px;
 }
@@ -56,7 +59,6 @@ h3 {
 
   margin: var(--margin-scale);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  /* background-color: #eaeaea; */
   border: solid 1px black;
   height: 40px;
   padding-left: 40px;
@@ -73,19 +75,55 @@ h3 {
     display: none;
   }
 }
-.myaccount{
+
+@media (min-width: 768px) {
+  .menuicon {
+    display: none;
+  }
+}
+
+.myaccount {
   width: 50px;
   height: 50px;
   margin-right: 50px;
 }
-.favourites{
+.favourites {
   width: 50px;
   height: 50px;
   margin-right: 15px;
 }
 
-.searchbutton{
+.searchbutton {
   width: 50px;
   height: 50px;
   margin-right: 15px;
+}
+
+.menusection{
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  top: 0px;
+  /* border: 5px solid black; */
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  width: 50vw;
+  position: fixed;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menusection button{
+  box-shadow: 5px 5px rgb(0, 0, 0);
+  border-radius: 50px;
+  font-size: 30px;
+  width: 50vw;
+  backdrop-filter: grayscale(30%);
+  background-color: rgb(222, 222, 222);
+  height: 20vh;
+}
+.hide{
+  display: none;
 }

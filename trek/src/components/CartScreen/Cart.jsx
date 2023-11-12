@@ -103,7 +103,7 @@ const Cart = () => {
   }
 
   if (!userId) {
-    return ( <div className=""><Navbar/><div className='center'>PLEASE LOGIN TO CONTINUE</div></div> );
+    return ( <div className=""><Navbar/><div style={{height:"100vh"}} className='center'>PLEASE LOGIN TO CONTINUE</div></div> );
   }
 
   return (

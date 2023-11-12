@@ -1,63 +1,67 @@
-.ListContainer{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    width: 80vw;
+.ListContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 80vw;
 }
 
-.ListTile{
-    margin: 10px;
-    border-radius: 15px;
-    height: 200px;
-    background-color: rgb(255, 222, 222);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.ListTile {
+  margin: 10px;
+  border-radius: 15px;
+  height: 200px;
+  background-color: rgb(255, 222, 222);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.ListImage{
-
-    margin-right: 10px;
-    border-radius: 15px;
-    height: 200px;
+.ListImage {
+  margin-right: 10px;
+  border-radius: 15px;
+  height: 200px;
 }
 
-.ListTitle{
-    display: flex;
-    font-size: 40px;
+.ListTitle {
+  display: flex;
+  font-size: 40px;
 }
 
-.details{
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+.details {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.ListPrice{
+@media (max-width: 768px) {
+  .ListPrice {
     font-size: 30px;
+  }
+  .ListTitle {
+    font-size: 30px;
+  }
 }
 
-.deletebutton{
-    margin: 10px;
-    background-color:transparent;
-    border: none;
-    height: 50px;
-    width: 50px;
+.deletebutton {
+  margin: 10px;
+  background-color: transparent;
+  border: none;
+  height: 50px;
+  width: 50px;
 }
 
-.submit{
-    background-color: rgb(32, 32, 32);
-    font-size: 48px;
-    max-width: 80vw;
-    border-radius: 30px;
-    margin: 10px;
-    padding: 10px;
-    color: white;
+.submit {
+  background-color: rgb(32, 32, 32);
+  font-size: 48px;
+  max-width: 80vw;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 10px;
+  color: white;
 }
 
-.deletebuttonicon{
-    height: 50px;
-    width: 50px;
+.deletebuttonicon {
+  height: 50px;
+  width: 50px;
 }
