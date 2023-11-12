@@ -64,10 +64,10 @@ const LoginPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        <button className='button pointer' type="button" onClick={Login}>Login</button>
+        <button className='loginbutton pointer' type="button" onClick={Login}>Login</button>
         <Link to="/signup"> New User? Sign UP here.</Link><Outlet/>
         <>or</>
-        <button className=' button pointer' type="button" onClick={SignInWithGoogle}>Sign in with Google</button>
+        <button className=' loginbutton pointer' type="button" onClick={SignInWithGoogle}>Sign in with Google</button>
     </section>
   );
 };

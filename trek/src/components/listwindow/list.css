@@ -20,7 +20,7 @@
 .imgwrap {
     position: relative;
     overflow: hidden;
-
+    border-radius: 20px;
     height: 400px;
     object-fit: cover;
 }
@@ -45,6 +45,7 @@
 @media (max-width: 768px) {
     .listtilecontainer {
         grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+        height: 300px;
     }
     .listcard {
         width: 100%;

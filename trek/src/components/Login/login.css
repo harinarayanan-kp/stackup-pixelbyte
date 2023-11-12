@@ -1,6 +1,7 @@
 .inputfield{
-    min-width: 500px;
-    width: 50vw;
+    min-width: 100px;
+    width: 80vw;
+    max-width: 500px;
     height: 50px;
     border-radius: 14px;
     font-size: 24px;
@@ -11,7 +12,7 @@
 }
 
 .signup-container{
-    min-width: 100vh;
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -20,12 +21,19 @@
 
 }
 
-.button{
+.loginbutton{
     background: #D9D9D9;
-    height: 5vw;
-    width: 30vw;
+    font-size: large;
+    padding: 25px;
+    min-width: 100px;
+    width: 50vw;
+    max-width: 300px;
     border-radius: 24px;
     margin: 28px;
+    transition: 0.3s;
+}
+.loginbutton:hover{
+    box-shadow: 0px 0px 20px black;
 }
 
 .pointer:hover{

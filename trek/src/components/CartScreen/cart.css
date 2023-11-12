@@ -36,10 +36,18 @@
 
 @media (max-width: 768px) {
   .ListPrice {
-    font-size: 30px;
+    font-size: large;
   }
   .ListTitle {
-    font-size: 30px;
+    font-size: large;
+  }
+  .ListTile{
+    height: 200px;
+  }
+  .ListImage{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
   }
 }
 
