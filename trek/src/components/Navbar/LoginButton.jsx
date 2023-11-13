@@ -36,12 +36,12 @@ const LoginButton = () => {
     }
     else {
         return (
-            <div style={{display: "flex"}}>
+            <div style={{display: "flex",justifySelf: "flex-end", flexDirection:"row", justifyContent:"flex-end"}}>
                 <Link to="/search">
-                    <div className='searchbutton'><img alt='' src={search}/></div>
+                    <div className='searchbutton center'><img alt='' src={search}/></div>
                 </Link>
                 <Link to="/favourites">
-                    <div className='favourites'><img alt='' src={like}/></div>
+                    <div className='favourites center'><img alt='' src={like}/></div>
                 </Link>
                 <Link to="/account">
                     <div className='myaccount'><img alt='' src={profile}/></div>

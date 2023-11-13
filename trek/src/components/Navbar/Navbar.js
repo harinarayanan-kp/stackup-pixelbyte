@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const handleMenuToggle = (category) => {
     setActiveButton(category);
-    setMenuSectionVisible(false); // Close menu section when a category is selected
+    setMenuSectionVisible(false);
   };
 
   const handleMenuSection = () => {
@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const handleMenuButtonClick = (category) => {
     setActiveButton(category);
-    setMenuSectionVisible(false); // Close menu section when a button in it is clicked
+    setMenuSectionVisible(false);
   };
 
   return (
@@ -75,16 +75,27 @@ const Navbar = () => {
           </button>
         </Link>
       </div>
-
-      <LoginButton />
-      <div className="menuicon" style={{ justifySelf: "flex-end" }}>
-        <button
-          style={{ border: "none", backgroundColor: "transparent" }}
-          onClick={handleMenuSection}
+      <div
+        style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+      >
+        <LoginButton />
+        <div
+          className="menuicon"
+          style={{
+            justifySelf: "flex-end",
+            marginRight: "10px",
+            marginLeft: "10px",
+          }}
         >
-          <img alt="" src={menu} />
-        </button>
+          <button
+            style={{ border: "none", backgroundColor: "transparent" }}
+            onClick={handleMenuSection}
+          >
+            <img alt="" src={menu} />
+          </button>
+        </div>
       </div>
+
       {menuSectionVisible && (
         <div className="menusection">
           <Link to="/list?category=men">
