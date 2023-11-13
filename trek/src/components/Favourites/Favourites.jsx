@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
-// import './likedProducts.css'; // Create a CSS file for styling
-// import QuantityButton from './QuantityButton';
-
 import { db, auth } from '../../config/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import Loader from '../loader/loader';
@@ -76,8 +73,6 @@ const Favourites = () => {
     fetchProductDetails();
   }, [likedProducts]);
 
-  // Add additional functionality for liking/unliking products if needed
-
   if (loading) {
     return <Loader />;
   }
@@ -105,7 +100,6 @@ const Favourites = () => {
           <LikedProductsTile
             key={index}
             product={product}
-            // You can add more props or functionality as needed
           />
         ))}
       </div>
@@ -114,15 +108,12 @@ const Favourites = () => {
 };
 
 const LikedProductsTile = ({ product }) => {
-  // You can customize the LikedProductsTile component based on your requirements
   return (
     <div className='LikedProductsTile'>
-      {/* Display product details, image, etc. */}
       <img alt='' src={product.Image} className='ListImage' />
       <div className='details'>
         <div className='ListTitle'>{product.Title}</div>
         <div className='ListPrice'>₹{product.Price}</div>
-        {/* Add more details or functionality as needed */}
       </div>
     </div>
   );

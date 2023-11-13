@@ -114,6 +114,11 @@ const Navbar = () => {
               SPORTS
             </button>
           </Link>
+          <Link to="/login">
+            <button style={{marginTop:"30px"}}>
+              <div className=''>LOGIN</div>
+            </button>
+          </Link>
         </div>
       )}
     </div>

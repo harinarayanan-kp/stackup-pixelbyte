@@ -28,8 +28,6 @@ const AdminDashboard = () => {
 
       const downloadURL = await getDownloadURL(storageRef);
     
-
-      // Add product to Firestore
       await addDoc(productRef, {
         Image: downloadURL,
         Title: newTitle,

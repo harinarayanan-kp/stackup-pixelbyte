@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar/Navbar";
-import HomeSlide from "./slide/HomeSlide";
-
+import HomeSlide from "./HomeSlide";
 import "./home.css";
 import CartButton from "./CartButton/CartButton";
 import Loader from "../loader/loader";
@@ -28,6 +27,7 @@ const HomeScreen = () => {
           <HomeMain />
           <CartButton />
           <AboutUs />
+          {/* <MouseFollower/> */}
         </div>
       )}
     </>
@@ -39,7 +39,7 @@ export default HomeScreen;
 const HomeMain = () => {
   return (
     <div className="homemain">
-      <HomeSlide />
+      <HomeSlide className= "ogiyfcsj"/>
       <div className="mainlist scrollable-content">
         <CardProduct />
       </div>
@@ -69,8 +69,7 @@ const CardProduct = () => {
       }
     };
     getProductList();
-  }, []);
-  //LOOP Error FIxed
+  }, [productCollectionRef]);
 
   return (
     <div style={{ display: "flex" }} className="listtilecontainer">
@@ -91,3 +90,32 @@ const CardProduct = () => {
     </div>
   );
 };
+
+// const MouseFollower = () => {
+//   const [position, setPosition] = useState({ x: 0, y: 0 });
+
+//   useEffect(() => {
+//     const handleMouseMove = (e) => {
+//       setPosition({ x: e.clientX, y: e.clientY });
+//     };
+
+//     window.addEventListener('mousemove', handleMouseMove);
+
+//     return () => {
+//       window.removeEventListener('mousemove', handleMouseMove);
+//     };
+//   }, []);
+
+//   return (
+//     <div
+//     className='mousetracker'
+//       style={{
+//         position: 'fixed',
+//         left: position.x -15 + 'px',
+//         top: position.y -15 + 'px',
+//       }}
+//     >
+//     </div>
+//   );
+// };
+
