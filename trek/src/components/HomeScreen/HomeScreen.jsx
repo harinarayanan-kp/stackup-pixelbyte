@@ -27,6 +27,9 @@ const HomeScreen = () => {
         <div>
           <Navbar />
           <img className="image1" alt="" src={image1}></img>
+          <div className="center" style={{ width: "100%"}}>
+            <div className="stepintostyle">Step into Style.</div>
+          </div>
           <HomeMain />
           <CartButton />
           <AboutUs />
@@ -41,7 +44,7 @@ export default HomeScreen;
 const HomeMain = () => {
   return (
     <div className="homemain">
-      <HomeSlide className= "ogiyfcsj"/>
+      <HomeSlide />
       <div className="mainlist scrollable-content">
         <CardProduct />
       </div>
@@ -92,5 +95,3 @@ const CardProduct = () => {
     </div>
   );
 };
-
-

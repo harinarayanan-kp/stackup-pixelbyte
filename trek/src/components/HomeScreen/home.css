@@ -50,7 +50,7 @@
   background-color: #2d2d2d;
 }
 .image1 {
-  width: 100vw;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -63,7 +63,7 @@
   .image1 {
     object-fit: cover;
     height: 50vh;
-    width: 100vw;
+    width: 100%;
   }
   .slidecontainer {
     width: 350px;
@@ -158,3 +158,8 @@
 .slidecontainer:hover .mousetracker {
   display: flex;
 }
+.stepintostyle{
+  font-size: 10vw;
+  font-family: 'Abril Fatface', serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
