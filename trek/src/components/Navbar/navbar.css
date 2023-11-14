@@ -107,7 +107,6 @@ h3 {
   border-radius: 50px;
   font-size: 30px;
   width: 50vw;
-  backdrop-filter: grayscale(30%);
   background-color: rgb(222, 222, 222);
   margin: 10px;
 }

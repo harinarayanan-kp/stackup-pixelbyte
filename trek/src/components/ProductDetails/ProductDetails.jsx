@@ -40,7 +40,6 @@ const ProductDetail = () => {
           console.log(productData);
           setProduct(productData);
 
-          // Check if the product is already liked by the user
           if (userId) {
             const likedProductsDocRef = doc(db, 'likedProducts', userId);
             const likedProductsDocSnapshot = await getDoc(likedProductsDocRef);
@@ -86,12 +85,10 @@ const ProductDetail = () => {
       const likedProductsDocRef = doc(db, 'likedProducts', userId);
 
       if (isLiked) {
-        // If the product is liked, remove it from liked products
         await updateDoc(likedProductsDocRef, {
           products: arrayRemove(productId),
         });
       } else {
-        // If the product is not liked, add it to liked products
         await updateDoc(likedProductsDocRef, {
           products: arrayUnion(productId),
         });
