@@ -9,7 +9,6 @@
 
 
 
-
 .mainlist {
     margin: 10px;
     border-radius: 14px;
@@ -67,4 +66,113 @@
         height: 50vh;
         width: 100vw;
     }
+}
+
+.slidecontainer {
+    border-radius: 20px;
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .slidecontainer {
+        width: 350px;
+        height: 500px;
+    }
+
+}
+
+
+.slider {
+    display: flex;
+    width: 1600px;
+    transition: transform 1s;
+}
+
+.slider-item {
+    flex: 0 0 400px;
+}
+
+.image-fit {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .slidecontainer {
+        width: 350px;
+        height: 500px;
+    }
+
+}
+
+
+.slider {
+    display: flex;
+    width: 1600px;
+    transition: transform 1s;
+}
+
+.slider-item {
+    flex: 0 0 400px;
+}
+
+.image-fit {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.mainnavbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: rgb(55, 55, 55);
+    box-shadow: 5px 5px 10px #888888;
+    transition: 0.2s;
+}
+
+.mainnavbutton:hover {
+    background-color: #1b1b1b;
+}
+
+.cartimage {
+    height: 50px;
+    width: 50px;
+}
+.mainnavbutton:hover{
+    cursor: pointer;
+    box-shadow: 0 0 20px #454545;
+}
+.mousetracker {
+    background-color: rgb(5, 5, 5);
+    box-shadow: 0px 0px 10px rgb(82, 82, 82);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: 300ms;
+    transition-timing-function: ease-in;
+}
+
+.slidecontainer {
+    position: relative;
+    border-radius: 20px;
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slidecontainer:hover .mousetracker {
+    display: flex;
 }

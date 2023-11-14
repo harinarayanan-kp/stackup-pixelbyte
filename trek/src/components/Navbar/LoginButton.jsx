@@ -23,7 +23,7 @@ const LoginButton = () => {
 
     if (!isLoggedIn) {
         return (
-            <div style={{display: "flex"}}>
+            <div style={{display: "flex", marginRight:"20px"}}>
                 <Link to="/search">
                     <div className='searchbutton center'><img alt='' src={search}/></div>
                 </Link>

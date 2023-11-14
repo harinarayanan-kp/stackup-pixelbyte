@@ -111,6 +111,7 @@ h3 {
   top: 100px;
   right: 0px;
   display: flex;
+  padding: 30px;
   flex-direction: column;
 }
 
@@ -140,6 +141,10 @@ h3 {
     margin-right: 5px;
   }
   .searchbutton {
+    display: none;
+  }
+  
+  .navbarend{
     display: none;
   }
 }
