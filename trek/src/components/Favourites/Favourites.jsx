@@ -100,6 +100,7 @@ const Favourites = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
       <Navbar />
+      
       <div className='ListContainer'>
         {products.map((product, index) => (
           <LikedProductsTile

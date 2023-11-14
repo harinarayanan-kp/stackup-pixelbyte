@@ -7,14 +7,7 @@
     align-items: center;
 }
 
-@media (max-width: 768px) {
-    .homemain {
-        flex-direction: column;
-    }
-    .mainlist.scrollable-content {
-        width: 90vw;
-    }
-}
+
 
 
 .mainlist {
@@ -58,4 +51,20 @@
 
 .scrollable-content::-webkit-scrollbar-thumb:hover {
     background-color: #2d2d2d;
+}
+.image1{
+    width: 100vw;
+}
+@media (max-width: 768px) {
+    .homemain {
+        flex-direction: column;
+    }
+    .mainlist.scrollable-content {
+        width: 90vw;
+    }
+    .image1{
+        object-fit: cover;
+        height: 50vh;
+        width: 100vw;
+    }
 }

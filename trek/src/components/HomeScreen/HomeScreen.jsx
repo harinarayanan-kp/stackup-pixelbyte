@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../config/firebase";
 
+import image1 from "../../images/trekhome1.jpg";
+
 const HomeScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -25,6 +27,7 @@ const HomeScreen = () => {
       ) : (
         <div>
           <Navbar />
+          <img className="image1" alt="" src={image1}></img>
           <HomeMain />
           <CartButton />
           <AboutUs />
