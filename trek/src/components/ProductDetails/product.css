@@ -1,4 +1,9 @@
-.detailsmain{
-    flex-direction: column;
-    align-items: center;
+.detailsmain {
+  flex-direction: column;
+  align-items: center;
+}
+.addtolikedproducts {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
 }

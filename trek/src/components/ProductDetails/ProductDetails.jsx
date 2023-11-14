@@ -5,6 +5,7 @@ import { doc, getDoc, updateDoc, arrayUnion, arrayRemove, setDoc, collection } f
 import CartButton from '../HomeScreen/CartButton/CartButton';
 import Navbar from '../Navbar/Navbar';
 import './product.css';
+import like from '../../images/like.svg'
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -170,17 +171,11 @@ function newFunction(product, handleAddToCart, handleToggleLike, isLiked) {
 
       <button
         style={{
-          height: '60px',
-          borderRadius: '50px',
-          backgroundColor: isLiked ? '#ff4081' : '#42a5f5',
-          color: 'white',
-          fontSize: '30px',
-          marginTop: '20px',
+          backgroundColor: isLiked ? 'red' : 'white',
         }}
         className='addtolikedproducts'
         onClick={handleToggleLike}
-      >
-        {isLiked ? 'Remove from Liked Products' : 'Add to Liked Products'}
+      ><img alt='' src={like}></img>
       </button>
     </div>
   );

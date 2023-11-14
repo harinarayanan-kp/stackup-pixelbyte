@@ -5,14 +5,14 @@ import { getDocs, collection, query, where } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import CartButton from "../HomeScreen/CartButton/CartButton";
-import { useLocation } from "react-router-dom"; // Import useLocation
+import { useLocation } from "react-router-dom";
 
 const List = () => {
   const [productList, setProductList] = useState([]);
-  const location = useLocation(); // Use useLocation to get the current URL location
+  const location = useLocation();
 
   useEffect(() => {
-    const categoryFilter = new URLSearchParams(location.search).get("category"); // Get the 'category' parameter from the URL
+    const categoryFilter = new URLSearchParams(location.search).get("category");
     const productCollectionRef = collection(db, "products");
 
     const getProductList = async () => {
