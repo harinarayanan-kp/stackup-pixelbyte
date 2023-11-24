@@ -1,11 +1,13 @@
 import React from 'react'
+import './loader.css'
+import '../commonstyle.css'
 
-const loader = () => {
+const Loader = () => {
   return (
-    <div className='loader'>
-      
+    <div style={{height: "100vh"}} className='center'>
+      <div className="loader"></div>
     </div>
   )
 }
 
-export default loader
+export default Loader

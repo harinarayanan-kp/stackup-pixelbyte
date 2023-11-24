@@ -1,14 +1,60 @@
-.listcard{
-    background-color: aquamarine;
-    border-radius: 30px;
-    margin: 30px;
-    height: 300px;
-    display: flex;
-    flex-direction: row;
+.listtilecontainer {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-.imgwrap{
+.listcard {
+    min-width: 300px;
+    max-width: 500px;
+    text-decoration: none;
+    color: #000;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgwrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 400px;
+    object-fit: cover;
+}
+.productTitle {
+    font-size: 20px;
+}
+
+.productPrice {
+    font-size: 20px;
+}
+
+.cardbottom {
+    background-color: rgb(53, 53, 53);
     border-radius: 15px;
-    height: 300px;
-    width: 300px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color: white;
+    padding: 20px;
+    padding-left: 30px;
+}
+
+@media (max-width: 768px) {
+    .listtilecontainer {
+        grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+        height: 300px;
+    }
+    .listcard {
+        width: 100%;
+        margin: 10px;
+    }
+    .productTitle {
+        font-size: 16px;
+    }
+    .productPrice {
+        font-size: 16px;
+    }
 }

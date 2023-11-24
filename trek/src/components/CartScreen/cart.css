@@ -1,49 +1,75 @@
-.ListContainer{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+.ListContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 80vw;
 }
 
-.ListTile{
-    margin: 10px;
-    border-radius: 15px;
+.ListTile {
+  margin: 10px;
+  border-radius: 15px;
+  height: 200px;
+  background-color: rgb(255, 222, 222);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ListImage {
+  margin-right: 10px;
+  border-radius: 15px;
+  height: 200px;
+}
+
+.ListTitle {
+  display: flex;
+  font-size: 40px;
+}
+
+.details {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 768px) {
+  .ListPrice {
+    font-size: large;
+  }
+  .ListTitle {
+    font-size: large;
+  }
+  .ListTile{
     height: 200px;
-    background-color: aqua;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  }
+  .ListImage{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
 }
 
-.ListImage{
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: red;
-    border-radius: 15px;
-    height: 180px;
-    width: 180px;
+.deletebutton {
+  margin: 10px;
+  background-color: transparent;
+  border: none;
+  height: 50px;
+  width: 50px;
 }
 
-.ListTitle{
-    display: flex;
-    font-size: 40px;
+.submit {
+  background-color: rgb(32, 32, 32);
+  font-size: 48px;
+  max-width: 80vw;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 10px;
+  color: white;
 }
 
-.details{
-    background-color: antiquewhite;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.ListPrice{
-    font-size: 30px;
-}
-
-.deletebutton{
-    margin: 10px;
-    background-color: rgb(236, 10, 10);
-    height: 30px;
-    width: 30px;
+.deletebuttonicon {
+  height: 50px;
+  width: 50px;
 }

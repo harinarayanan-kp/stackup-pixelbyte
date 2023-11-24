@@ -62,9 +62,9 @@ const SignupPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        <button className='button pointer' type="button" onClick={SignUp}>Sign Up</button>
+        <button className='loginbutton' type="button" onClick={SignUp}>Sign Up</button>
         <>or</>
-        <button className=' button pointer' type="button" onClick={SignInWithGoogle}>Sign in with Google</button>
+        <button className=' loginbutton' type="button" onClick={SignInWithGoogle}>Sign in with Google</button>
     </section>
   );
 };

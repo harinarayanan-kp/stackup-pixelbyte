@@ -1,14 +1,9 @@
-.listcard{
-    background-color: aquamarine;
-    border-radius: 30px;
-    margin: 30px;
-    height: 300px;
-    display: flex;
-    flex-direction: row;
+.detailsmain {
+  flex-direction: column;
+  align-items: center;
 }
-
-.imgwrap{
-    border-radius: 15px;
-    height: 300px;
-    width: 300px;
+.addtolikedproducts {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
 }
